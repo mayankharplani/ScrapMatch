@@ -1,0 +1,122 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * SCRAPMATCH design system — "Pastel Sage".
+ * All colors are semantic tokens in oklch. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-peach: var(--peach);
+  --color-peach-foreground: var(--peach-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+
+  --shadow-soft: 0 1px 2px oklch(0.32 0.035 160 / 0.04), 0 8px 24px -12px oklch(0.32 0.035 160 / 0.12);
+  --shadow-lift: 0 2px 4px oklch(0.32 0.035 160 / 0.05), 0 18px 40px -20px oklch(0.32 0.035 160 / 0.22);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* warm ivory */
+  --background: oklch(0.982 0.008 95);
+  /* deep forest */
+  --foreground: oklch(0.32 0.035 160);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.32 0.035 160);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.32 0.035 160);
+
+  /* muted sage */
+  --primary: oklch(0.655 0.058 155);
+  --primary-foreground: oklch(1 0 0);
+
+  /* soft lime */
+  --secondary: oklch(0.885 0.079 118);
+  --secondary-foreground: oklch(0.32 0.035 160);
+
+  --muted: oklch(0.955 0.012 120);
+  --muted-foreground: oklch(0.52 0.03 158);
+
+  --accent: oklch(0.885 0.079 118);
+  --accent-foreground: oklch(0.32 0.035 160);
+
+  /* pale sage surface */
+  --surface: oklch(0.945 0.022 150);
+  --surface-foreground: oklch(0.32 0.035 160);
+
+  /* soft peach accent */
+  --peach: oklch(0.855 0.058 60);
+  --peach-foreground: oklch(0.32 0.035 160);
+
+  --destructive: oklch(0.577 0.18 27.325);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.9 0.02 150);
+  --input: oklch(0.9 0.02 150);
+  --ring: oklch(0.655 0.058 155);
+
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.32 0.035 160);
+  --sidebar-border: oklch(0.9 0.02 150);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+}
